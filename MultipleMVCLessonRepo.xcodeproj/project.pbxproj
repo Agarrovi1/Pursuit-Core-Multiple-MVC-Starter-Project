@@ -67,11 +67,11 @@
 		CD04D1E92302108400E9EEBB /* MultipleMVCLessonRepo */ = {
 			isa = PBXGroup;
 			children = (
+				4D11687B23030AB200F4EE40 /* Supporting files */,
 				4D1168792303098600F4EE40 /* MovieListTableViewController.swift */,
 				4D11687C23030B0B00F4EE40 /* MovieTableViewCell.swift */,
-				4D11687B23030AB200F4EE40 /* Supporting files */,
-				CD04D1EE2302108400E9EEBB /* Main.storyboard */,
 				CD04D1FC23021ABC00E9EEBB /* Movie.swift */,
+				CD04D1EE2302108400E9EEBB /* Main.storyboard */,
 				CD04D1F12302108800E9EEBB /* Assets.xcassets */,
 				CD04D1F62302108800E9EEBB /* Info.plist */,
 			);

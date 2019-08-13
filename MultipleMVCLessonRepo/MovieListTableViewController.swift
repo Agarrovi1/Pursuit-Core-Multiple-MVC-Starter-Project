@@ -11,10 +11,11 @@ import UIKit
 class MovieListTableViewController: UITableViewController {
 
     @IBOutlet var movieTableView: UITableView!
+    let movies = Movie.allMovies
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        movieTableView.dataSource = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,23 +28,28 @@ class MovieListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return movies.count
     }
 
-    /*
+   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let theMovie = movies[indexPath.row]
+        guard let cell = movieTableView.dequeueReusableCell(withIdentifier: "movieCell") as? MovieTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.titleLabel.text = theMovie.name
+        cell.genreLabel.text = theMovie.genre
+        cell.movieImageVIew.image = UIImage(named: theMovie.posterImageName)
+       
 
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.
